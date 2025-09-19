@@ -12,7 +12,7 @@ const UserItem = ({ name, age,favColour }: { name: string; age: number }) => (
   <View style={styles.item}>
     <Text style={styles.name}>Name:{name}</Text>
     <Text style={styles.age}>Age: {age}</Text>
-    <Text style={styles.name}>Favourite Colour: {fa}</Text>
+    <Text style={styles.name}>Favourite Colour: {favColour}</Text>
   </View>
 );
 export default function App() {
