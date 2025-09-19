@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList, } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TextInput, Button, } from 'react-native';
 import { useState } from "react";
 
 const [users, setUsers] = useState([
@@ -30,13 +30,14 @@ export default function App() {
     const[newAge, setNewAge]= useState('')
     const[newFavColour, setNewFavColour] = useState('')
     return(
-    <Text style={styles.title}>Please enter the new details</Text>
-    <Text style={styles.name}>What is your name?:{newName}</Text>
-    <Text style={styles.age}>How decrepit are you?:{newAge}</Text>
-    <Text style= {styles.name}>What colour do you like?:{newFavColour}</Text>
-    
-
-
+      <View>
+        <TextInput style={styles.title}>Please enter the new details😜</TextInput>
+        <TextInput style={styles.name}>What is your name?:{newName}</TextInput>
+        <TextInput style={styles.age}>How decrepit are you?:{newAge}</TextInput>
+        <TextInput style= {styles.name}>What colour do you like?:{newFavColour}</TextInput>
+        <Button></Button>
+      </View>
+      
     )
 }
 const styles = StyleSheet.create({
