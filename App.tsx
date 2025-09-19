@@ -2,16 +2,17 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList, } from 'react-native';
 import { useState } from "react";
 
-const [users, useState] = [
-  { id: "1", name: "Siya", age: 25 }, useState('')
-  { id: "2", name: "Caryn", age: 30 },
-  { id: "3", name: "Jaco", age: 22 },
-  { id: "4", name: "Mihle", age: 28 },
-];
-const UserItem = ({ name, age }: { name: string; age: number }) => (
+const [users, setUsers] = useState([
+  { id: "1", name: "Siya", age: 25 , favColour: 'red'}, 
+  { id: "2", name: "Caryn", age: 30, favColour: 'pink' },
+  { id: "3", name: "Jaco", age: 22, favColour: 'maroon' },
+  { id: "4", name: "Mihle", age: 28, favColour: 'navy' },
+]);
+const UserItem = ({ name, age,favColour }: { name: string; age: number }) => (
   <View style={styles.item}>
-    <Text style={styles.name}>{name}</Text>
+    <Text style={styles.name}>Name:{name}</Text>
     <Text style={styles.age}>Age: {age}</Text>
+    <Text style={styles.name}>Favourite Colour: {fa}</Text>
   </View>
 );
 export default function App() {
