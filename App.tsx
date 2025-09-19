@@ -8,7 +8,7 @@ const [users, setUsers] = useState([
   { id: "3", name: "Jaco", age: 22, favColour: 'maroon' },
   { id: "4", name: "Mihle", age: 28, favColour: 'navy' },
 ]);
-const UserItem = ({ name, age,favColour }: { name: string; age: number }) => (
+const UserItem = ({ name, age, favColour }: { name: string; age: number; favColour: string }) => (
   <View style={styles.item}>
     <Text style={styles.name}>Name:{name}</Text>
     <Text style={styles.age}>Age: {age}</Text>
@@ -22,10 +22,22 @@ export default function App() {
       <FlatList
 	      data={users}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <UserItem name={item.name} age={item.age} />}
+        renderItem={({ item }) => <UserItem name={item.name} age={item.age} favColour= {item.favColour} />}
       />
     </View>
   );
+  const [newName, setNewName]= useState('')
+    const[newAge, setNewAge]= useState('')
+    const[newFavColour, setNewFavColour] = useState('')
+    return(
+    <Text style={styles.title}>Please enter the new details</Text>
+    <Text style={styles.name}>What is your name?:{newName}</Text>
+    <Text style={styles.age}>How decrepit are you?:{newAge}</Text>
+    <Text style= {styles.name}>What colour do you like?:{newFavColour}</Text>
+    
+
+
+    )
 }
 const styles = StyleSheet.create({
   container: {
